@@ -107,15 +107,10 @@ class FullSystem:
                 th = self.cfg.data.sinr_threshold_list[0] * torch.ones(1)
 
             fb_bin = (fb > th).float()
-            # make sure fb is longer than 1:
-            # if fb_bin.shape[0] < 2:
-            #     fb_std = torch.zeros(1)
-            # else:
-            #     fb_std = torch.std(fb_bin)
             if torch.mean(fb_bin) > 1:
                 erasure_pred[0, :] = torch.ones(future)
             else:
-                erasure_pred[0, :] = torch.mean(fb_bin)  # +fb_std
+                erasure_pred[0, :] = torch.mean(fb_bin)
 
         # Par:
         else:

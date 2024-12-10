@@ -6,7 +6,7 @@ CFG = {
 
     "data": {
         "project_folder": r"",  # Code folder (And results)
-        "folder": r"C:\Users\adina\Technion\Research\SINR\FromServer\SINR_Mats",  # Data Folder
+        "folder": r"",  # Data Folder, will be in the format: f"{cfg.data.project_folder}/sinr_mats_mixBS/scenario_{scenario}/"
         "max_rep": 600,  # Number of files for training
         "future": 10,  # [time-steps]
         "memory_size": 30,  # [time-steps]
@@ -49,7 +49,7 @@ CFG = {
         "T": 2500,  # Must be < each sinr's length
         "rtt": 10,
         "th": 0,  # For the re-tranmission threshold
-        "protocol_print_flag": False,  # Protocol log print flag
+        "protocol_print_flag": True,  # Protocol log print flag
         "interactive_plot_flag": False
     },
 }

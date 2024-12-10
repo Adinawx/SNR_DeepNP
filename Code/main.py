@@ -82,7 +82,7 @@ def run(
                 cfg.data.memory_size = int(cfg.data.future * mem_factor)
                 cfg.data.sinr_threshold_list = sinr_th_list
                 cfg.data.rate_list = rate_list
-                cfg.data.folder = f"{cfg.data.project_folder}/sinr_mats_mixBS/scenario_{scenario}/"
+                cfg.data.folder = f"{cfg.data.project_folder}/Data/scenario_{scenario}/"
 
                 print(f"RUNNING: {run_flag.upper()}")
                 print(f"RTT={rtt}, Scenario={scenario}, pred_type={pred_type}")
@@ -135,7 +135,7 @@ def run(
                                     sys.stdout = stdoutOrigin
                                 print("done")
 
-                ################################### Option 2: Test a trained model  ############################################
+                ################################### Option 2: Test  ############################################
                 if run_flag == 'test' or run_flag == 'train_and_test' or run_flag == 'test_robust':
 
                     if pred_type == 'gini' or pred_type == 'stat':
@@ -305,8 +305,8 @@ if __name__ == '__main__':
         run_flag='test',  # 'train', 'test', 'plot', 'train_and_test', 'test_robust'
         results_folder='Results_Demo',  # Will be in the project folder
         eval_foldername='Demo0',  # - For Deep Model Est
-        new_foldername='Demo0',
-        rtt_list=[10],
+        new_foldername='Demo01',  # Must change for each run
+        rtt_list=[10, 20],
         pred_type_list=['gini'],  # ['gini', 'stat', 'model']
         scenario_list=['mid'],  # ['slow', 'mid', 'fast']
         model_type_list=['Bin'],  # ['TH', 'Par', 'Bin'] - For Deep Model Est
@@ -314,15 +314,15 @@ if __name__ == '__main__':
         test_type='Single',  # 'Single', 'Par'
         sinr_th_list=[5],  # [1, 5, 8, 12],  #[1, 5, 8, 12],  # [1, 5, 8, 12],  # [5], [1, 5, 8],
         rate_list=[0.625, 0.75],  # [0.5, 0.625, 0.75, 0.8125, 0.8125], # [0.625, 0.75], [0.5, 0.625, 0.75, 0.8125],
-        rep=300,  # For test
-        epochs=50,
+        rep=1,  # For test
+        epochs=50,  # - For Deep Model Est
         p_th=0,
-        smooth_factor=0.7,
-        retrain_flag=True,
+        smooth_factor=0.7,  # - For Deep Model Est
+        retrain_flag=True,  # - For Deep Model Est
 
-        print_out_flag=False,
+        print_out_flag=True,  # prompt or files
         max_rep=300,  # For train
-        batch_size=1,
+        batch_size=1,  # - For Deep Model Est
         mem_factor=3,
-        th_update_factor=0.5
+        th_update_factor=0.5  # - For Deep Model Est?
     )

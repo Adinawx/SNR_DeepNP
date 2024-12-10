@@ -52,8 +52,8 @@ class Data:
         print(r"Load Data {}...".format(datapart))
 
         sinr_folder = self.cfg.data.folder
-        all_files = sorted(glob.glob(f"{sinr_folder}/sinr_mats_{datapart}/*.mat"))  # Unix
-        # all_files = sorted(glob.glob(f"{sinr_folder}\SINR_mats_{datapart}\*.mat")) # Windows
+        # all_files = sorted(glob.glob(f"{sinr_folder}/sinr_mats_{datapart}/*.mat"))  # Unix
+        all_files = sorted(glob.glob(f"{sinr_folder}\SINR_mats_{datapart}\*.mat")) # Windows
 
         num_files = all_files.__len__()
         mat = scipy.io.loadmat(all_files[0])
