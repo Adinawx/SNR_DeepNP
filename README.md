@@ -16,8 +16,8 @@ DeepNP comes in two variants:
 ## Project Structure
 
 ```
-├── Data
-├── Code
+├── Data/
+├── Code/
   ├── main.py                # Main entry point for running the code
   ├── config/                
   │   └── config.py          # Configuration parameters
@@ -39,7 +39,7 @@ DeepNP comes in two variants:
       ├── full_system.py     # Set erasure prediction method and proceed to run the simulation
       ├── rates.py           # SNR to rate conversion - and a soft diffrentiable surrogate function
       └── <other>.py         # Plot result
-├── Results_folder           # If does not exists, creates during run
+├── Results/                 # If does not exists, created during run
 ```
 
 ## Running the Code
